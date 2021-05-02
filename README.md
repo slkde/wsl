@@ -58,17 +58,18 @@ docker > settings > Resources > WSL INTEGRATION 开启ubuntu-18.04
 
 ### 说明：
 1. 在windows中安装vscode之后，在linux中也可以使用，code .
-2. linux中挂载windows系统的位置
+2. windows开机后，必须先开启linux子系统。然后启动docker。不然docker会报错。
+3. linux中挂载windows系统的位置
 ```
 /mnt/c
 /mnt/d
 /mnt/e
 ```
-1. 推荐在linux文件系统中使用开发环境。linux子系统安装在C盘，所以最好挂载新的linux分区。
-2. 因为windows不区分大小写。所以不要在linux子系统中使用windows分区编译软件。
+4. 推荐在linux文件系统中使用开发环境。跨系统读写文件系统会很慢。
+5. 因为windows不区分大小写。所以不要在linux子系统中使用windows分区编译软件。
 
 ## wsl中挂载linux分区：
-说明：正式版windows系统wsl2不支持挂载分区。请先升级到windows预览版。目前只能挂载硬盘。所以需要安装第二块硬盘。
+说明：正式版windows系统wsl2不支持挂载分区。请先升级到windows预览版。目前不能单独挂载分区。所以需要安装第二块硬盘。
 1. 查看硬盘。
 ```
 wmic diskdrive list brief
@@ -85,7 +86,10 @@ wsl --mount \\.\PHYSICALDRIVE2
 挂载分区
 wsl --mount \\.\PHYSICALDRIVE2 --partition 4
 ```
-
+3. 没有第二块硬盘？可以使用虚拟磁盘vmdk
+打开计算机管理，展开存储，对着磁盘管理点鼠标右键，点创建vhd，选择保存位置，点击确定。
+初始化磁盘。分区。格式化为ext4
+然后回到第一步，挂载硬盘。
 ## 其他说明：
 终端推荐使用Windows Terminal，在windows测试版里默认安装。
 ```
@@ -109,7 +113,7 @@ wsl --unregister ubuntu-18.04
 ```
 3. 导入系统
 ```
-wsl --import ubuntu-18.04 e:\wsl\ubuntu-18.04 e:\wsl-ubuntu-18.04.tar
+wsl --import ubuntu-18.04 e:\wsl\ubuntu-18.04 e:\wsl-ubuntu-18.04.tar --version 2
 ```
 4. 重新设定默认登陆用户名
 ```
