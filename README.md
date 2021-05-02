@@ -66,7 +66,7 @@ docker > settings > Resources > WSL INTEGRATION 开启ubuntu-18.04
 /mnt/e
 ```
 4. 推荐在linux文件系统中使用开发环境。跨系统读写文件系统会很慢。
-5. 因为windows不区分大小写。所以不要在linux子系统中使用windows分区编译软件。
+5. 因为windows不区分大小写。所以不要在linux子系统中使用windows分区来编译软件。
 
 ## wsl中挂载linux分区：
 说明：正式版windows系统wsl2不支持挂载分区。请先升级到windows预览版。目前不能单独挂载分区。所以需要安装第二块硬盘。
@@ -86,9 +86,9 @@ wsl --mount \\.\PHYSICALDRIVE2
 挂载分区
 wsl --mount \\.\PHYSICALDRIVE2 --partition 4
 ```
-3. 没有第二块硬盘？可以使用虚拟磁盘vmdk
+3. 没有第二块硬盘？可以使用虚拟磁盘vmdk：
 打开计算机管理，展开存储，对着磁盘管理点鼠标右键，点创建vhd，选择保存位置，点击确定。
-初始化磁盘。分区。格式化为ext4
+初始化磁盘。分区。格式化为ext4。
 然后回到第一步，挂载硬盘。
 ## 其他说明：
 终端推荐使用Windows Terminal，在windows测试版里默认安装。
