@@ -94,3 +94,5 @@ https://github.com/microsoft/terminal/releases
 以前用过linux桌面版在实体机上做为开发环境。实在不习惯。
 mac os 中开发也还好。对docker支持不错。
 但还是windows用起来更习惯一些。
+在windows中打开vscode时，最好点击左下角，点击连接wsl。
+remote-wsl reopen folder in wsl
