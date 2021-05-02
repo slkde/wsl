@@ -96,3 +96,28 @@ mac os 中开发也还好。对docker支持不错。
 但还是windows用起来更习惯一些。
 在windows中打开vscode时，最好点击左下角，点击连接wsl。
 remote-wsl reopen folder in wsl
+
+## 你的C盘太小？
+把linux子系统放入E盘
+1. 导出系统
+```
+wsl --export ubuntu-18.04 e:\wsl-ubuntu-18.04.tar
+```
+2. 删除当前系统
+```
+wsl --unregister ubuntu-18.04
+```
+3. 导入系统
+```
+wsl --import ubuntu-18.04 e:\wsl\ubuntu-18.04 e:\wsl-ubuntu-18.04.tar
+```
+4. 重新设定默认登陆用户名
+```
+cd C:\Users\你的windows用户名\AppData\Local\Microsoft\WindowsApps\
+
+ubuntu1804.exe config --default-user 你之前用的linux子系统用户名
+```
+============================================================
+```
+wsl --list --verbose
+```
