@@ -87,9 +87,6 @@ wsl --mount \\.\PHYSICALDRIVE2
 wsl --mount \\.\PHYSICALDRIVE2 --partition 4
 ```
 3. 没有第二块硬盘？可以使用虚拟磁盘vmdk：
-打开计算机管理，展开存储，对着磁盘管理点鼠标右键，点创建vhd，选择保存位置，点击确定。
-初始化磁盘。分区。格式化为ext4。
-然后回到第一步，挂载硬盘。
 ## 其他说明：
 终端推荐使用Windows Terminal，在windows测试版里默认安装。
 ```
