@@ -45,6 +45,12 @@ Remote WSL
 Remote SSH
 Remote Containers
 ```
+[其他推荐插件。](https://github.com/slkde/vscode)
+```
+https://github.com/slkde/vscode
+https://gitee.com/slkde/vscode
+```
+
 7. [安装docker](https://www.docker.com/)
 ```
 https://www.docker.com/
